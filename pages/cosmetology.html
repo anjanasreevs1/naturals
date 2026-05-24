@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naturals Beauty Academy Cosmetology Courses in Kottayam - professional cosmetology training in skin, hair, makeup, and salon services.">
+    <title>Cosmetology Courses in Kottayam - Naturals Beauty Academy Kottayam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for enhanced animations and sliders */
+        .animate-slide-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1s ease-out forwards;
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideLeft 1s ease-out forwards;
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideRight 1s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+
+        .animate-bounce {
+            opacity: 0;
+            animation: bounceIn 1s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Slider styles */
+        .courses-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .course-slide {
+            min-width: 100%;
+            display: none;
+        }
+
+        .course-slide.active {
+            display: block;
+        }
+
+        .course-card-large {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e9ecef;
+        }
+
+        .course-header-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .course-details p {
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            gap: 1rem;
+        }
+
+        .slider-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: #680000;
+            transform: scale(1.1);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        /* Rating section */
+        .rating-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe4d4 100%);
+            text-align: center;
+        }
+
+        .rating-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 300px;
+        }
+
+        .authority-card {
+            background: #fff5eb;
+            border: 1px solid #ffd1b8;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            display: inline-flex;
+            justify-content: center;
+            width: fit-content;
+            margin: 1.5rem auto;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Overview section */
+        .overview-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .overview-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .overview-content h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            text-align: left;
+        }
+
+        .training-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .training-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .training-list li:before {
+            content: '�';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Testimonials slider */
+        .testimonials-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .testimonials-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slide {
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .testimonial-content p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-author span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-btn:hover {
+            background: #680000;
+            transform: scale(1.1);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Trainer section */
+        .trainer-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .trainer-card {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe4d4 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trainer-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .trainer-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .trainer-focus {
+            list-style: none;
+            padding: 0;
+        }
+
+        .trainer-focus li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .trainer-focus li:before {
+            content: '?';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Animation delays */
+        .animate-slide-left:nth-child(1) { animation-delay: 0.1s; }
+        .animate-slide-right:nth-child(2) { animation-delay: 0.2s; }
+        .animate-slide-left:nth-child(3) { animation-delay: 0.3s; }
+        .animate-slide-right:nth-child(4) { animation-delay: 0.4s; }
+
+        .animate-scale-in:nth-child(1) { animation-delay: 0.1s; }
+        .animate-scale-in:nth-child(2) { animation-delay: 0.2s; }
+        .animate-scale-in:nth-child(3) { animation-delay: 0.3s; }
+        .animate-scale-in:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/NATURALS BEAUTY KOTTAYM.png" alt="Naturals Beauty Academy Kottayam Logo" class="logo-image">
+                </div>
+
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About Us</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Header -->
+    <section class="course-header cosmetology-bg">
+        <div class="container">
+            <h1 class="animate-slide-down">Cosmetology Courses in Kottayam</h1>
+            <p class="animate-slide-up">Naturals Beauty Academy Kottayam offers professional cosmetology courses designed to build strong foundational knowledge and advanced skills in beauty, skin, and hair care. Learn skincare treatments, hair techniques, makeup artistry, salon management, and modern cosmetology practices through hands-on training and expert guidance.</p>
+        </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <h2 class="animate-fade-in">Key Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item animate-slide-left"><h4>Basic to advanced cosmetology programs</h4></div>
+                <div class="highlight-item animate-slide-right"><h4>Hands-on practical training</h4></div>
+                <div class="highlight-item animate-slide-left"><h4>Real client and salon exposure</h4></div>
+                <div class="highlight-item animate-slide-right"><h4>Industry-recognized certification</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation Section -->
+    <section class="rating-section">
+        <div class="container">
+            <div class="rating-card animate-bounce">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Google</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="animate-fade-in">Our Impact</h2>
+            <div class="impact-stats">
+                <div class="impact-stat animate-scale-in"><h3>200+</h3><p>Students Trained</p></div>
+                <div class="impact-stat animate-scale-in"><h3>10,000+</h3><p>Practical Training Hours</p></div>
+                <div class="impact-stat animate-scale-in"><h3>20+</h3><p>Industry Workshops & Events</p></div>
+                <div class="impact-stat animate-scale-in"><h3>100%</h3><p>Placement Assistance*</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Programs Slider -->
+    <section class="courses-slider-section">
+        <div class="container">
+            <h2 style="text-align: center;">Our Advanced Cosmetology Courses</h2>
+            <p class="section-intro">Our cosmetology courses combine creativity with scientific knowledge, training you in professional skin, hair, and beauty techniques, product knowledge, hygiene standards, and client consultation. Learn to deliver complete beauty solutions while building a successful career in the beauty industry.</p>
+
+            <div class="courses-slider">
+                <div class="slider-container">
+                    <div class="course-slide active">
+                        <div class="course-card-large">
+                            <div class="course-header-card">
+                                <h3>Foundation Course in Cosmetology</h3>
+                                <h4>Course Details</h4>
+                                <div class="course-details">
+                                    <p><strong>Course Duration:</strong></p>
+                                    <p><strong>Training Days:</strong> Weekday / Weekend</p>
+                                    <p><strong>Mode:</strong> Classroom Training</p>
+                                    <p><strong>Level:</strong> Beginner Friendly</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn btn-primary">View Program</button>
+                                <button class="btn btn-secondary">Enquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-slide">
+                        <div class="course-card-large">
+                            <div class="course-header-card">
+                                <h3>Advanced Cosmetology Course</h3>
+                                <h4>Course Details</h4>
+                                <div class="course-details">
+                                    <p><strong>Course Name</strong></p>
+                                    <p><strong>Advanced Cosmetology Course</strong></p>
+                                    <p><strong>Course Duration:</strong> 6�12 Months</p>
+                                    <p><strong>Training Days:</strong> Weekday / Weekend</p>
+                                    <p><strong>Mode:</strong> Classroom Training</p>
+                                    <p><strong>Level:</strong> Intermediate to Advanced</p>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn btn-primary">View Program</button>
+                                <button class="btn btn-secondary">Enquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                    </div>
+                    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="animate-fade-in" style="text-align: center;">Overview of Cosmetology Courses in Kottayam</h2>
+            <div class="overview-content animate-slide-up">
+                <p>Kottayam is emerging as a growing hub for professional cosmetology education in Kerala. With increasing demand in skincare, haircare, wellness, and salon services, cosmetology has become a highly rewarding and versatile career option.</p>
+                <p>Naturals Beauty Academy Kottayam offers cosmetology programs aligned with current industry trends, focusing on practical learning and modern techniques. The curriculum is designed to build strong fundamentals in beauty science while advancing into professional cosmetology skills.</p>
+                <p>The courses cover key areas such as skin analysis, facial treatments, hair care, chemical services, makeup basics, hygiene practices, and salon procedures. Students gain hands-on experience through live demonstrations and real client practice, helping them develop confidence, precision, and professional skills.</p>
+                <p>Whether you are a beginner or a professional looking to upgrade your skills, Naturals Beauty Academy Kottayam provides structured learning, flexible batches, and career-focused training to help you succeed in the beauty industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Approach -->
+    <section class="training-approach">
+        <div class="container">
+            <h2>Our Training Approach</h2>
+            <p class="section-intro">At Naturals Beauty Academy Kottayam, our cosmetology courses focus on combining theory with practical training, helping students build confidence and industry readiness.</p>
+            <div class="approach-card">
+                <h4>How We Train</h4>
+                <ul>
+                    <li>Practical sessions on live models to understand real client needs</li>
+                    <li>Step-by-step guidance from experienced, certified trainers</li>
+                    <li>Structured curriculum covering skin, hair, and beauty techniques</li>
+                    <li>Small batch sizes for personalized attention and skill development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="career-section">
+        <div class="container">
+            <h2 class="animate-fade-in">What Happens After Completing Cosmetology Courses in Kottayam?</h2>
+            <p class="section-intro animate-slide-up">After completing a cosmetology course at Naturals Beauty Academy Kottayam, students gain comprehensive skills across skin, hair, and beauty services along with real-world experience.</p>
+            <div class="overview-content animate-slide-up">
+                <p>Graduates can explore roles such as cosmetologist, beauty therapist, skincare specialist, hair technician, salon professional, or freelance beauty expert. With continuous practice and expert mentorship, students are well-prepared to enter the industry.</p>
+                <p>Naturals Beauty Academy also provides career guidance and placement assistance, helping students transition from training to professional opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="animate-fade-in">Benefits of Learning Cosmetology at Naturals Beauty Academy Kottayam</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-slide-left"><h3>Career Growth &amp; Opportunities</h3><p>Cosmetology offers diverse opportunities in salons, spas, clinics, bridal services, and freelance work, allowing flexible and scalable career growth.</p></div>
+                <div class="benefit-card animate-slide-right"><h3>Practical Skill Development</h3><p>Students gain real-time experience through live practice sessions, client handling, and professional techniques used in the industry.</p></div>
+                <div class="benefit-card animate-slide-left"><h3>Industry-Recognised Certification</h3><p>Certification from Naturals Beauty Academy helps build trust and credibility with clients and employers.</p></div>
+                <div class="benefit-card animate-slide-right"><h3>Portfolio &amp; Confidence Building</h3><p>Students develop a strong portfolio showcasing their skills in skin, hair, and beauty treatments.</p></div>
+                <div class="benefit-card animate-slide-left"><h3>Career Support &amp; Placement Assistance</h3><p>Naturals Beauty Academy Kottayam provides career guidance, placement support, and mentoring to help students grow in the beauty industry.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainer Section -->
+    <section class="trainer-section">
+        <div class="container">
+            <h2 class="animate-fade-in" style="text-align: center;">Meet Our Expert Cosmetology Trainers</h2>
+            <p class="animate-slide-up" style="text-align: center;">Learn from professionals who bring real industry experience into every class. Our trainers are certified experts with strong backgrounds in skincare, haircare, and advanced cosmetology practices.</p>
+
+            <div class="trainer-card animate-bounce">
+                <div class="trainer-info">
+                    <h3>Senior Cosmetology Trainer | Naturals Beauty Academy Kottayam</h3>
+                    <p>___ is a professionally trained cosmetologist with over ___ years of experience in the beauty industry. With strong expertise in skincare, hair treatments, and advanced cosmetology techniques, ___ brings practical, industry-relevant knowledge into the classroom.</p>
+                    <p>As a certified trainer at Naturals Beauty Academy Kottayam, ___ has trained over ___ students, guiding them through strong fundamentals, advanced techniques, and professional client-handling practices. Their teaching approach focuses on hands-on learning, attention to detail, and adapting treatments based on different skin types, hair textures, and client needs.</p>
+                    <p>In addition to training, ___ has been associated with ___ (salons / clinics / beauty events / studios), giving students exposure to real-world cosmetology scenarios. Their mentorship helps shape confident, job-ready professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employers Section -->
+    <section class="employers-section">
+        <div class="container">
+            <h2 class="animate-fade-in">Firms That Hire Cosmetologists</h2>
+            <p class="section-intro animate-slide-up">Professional cosmetologists trained at Naturals Beauty Academy Kottayam work across top salons, spas, and beauty platforms:</p>
+            <div class="employers-grid">
+                <div class="employer animate-scale-in">
+                    <img src="../images/lakme.jpeg" alt="Lakme Salon logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/tony and Guy.png" alt="Toni & Guy logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/vlcc.jpg" alt="VLCC logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/naturals.jpeg" alt="Naturals logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/tribe.png" alt="Tribe Salon logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/urban company.png" alt="Urban Company logo">
+                </div>
+                <div class="employer animate-scale-in">
+                    <img src="../images/ym.png" alt="Yes Madam logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="animate-fade-in" style="text-align: center;">What Our Students Say</h2>
+            <p class="animate-slide-up" style="text-align: center;">Hear from students who have experienced professional cosmetology training and taken confident steps toward their beauty careers with Naturals Beauty Academy Kottayam.</p>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-content">
+                            <p>"The training at Naturals Beauty Academy transformed my career. The hands-on experience and expert guidance helped me become a confident cosmetologist."</p>
+                            <div class="testimonial-author">
+                                <h4>- Sarah Johnson</h4>
+                                <span>Cosmetologist at Naturals Salon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-content">
+                            <p>"Excellent training program with real-world exposure. The placement assistance helped me land my dream role immediately after completion."</p>
+                            <div class="testimonial-author">
+                                <h4>- Maria Rodriguez</h4>
+                                <span>Beauty Therapist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-content">
+                            <p>"The comprehensive curriculum and experienced trainers made learning enjoyable. I now feel ready to build a successful beauty career."</p>
+                            <div class="testimonial-author">
+                                <h4>- Priya Sharma</h4>
+                                <span>Beauty Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev" onclick="prevTestimonial()">&#10094;</button>
+                <div class="testimonial-dots">
+                    <span class="dot active" onclick="goToTestimonial(0)"></span>
+                    <span class="dot" onclick="goToTestimonial(1)"></span>
+                    <span class="dot" onclick="goToTestimonial(2)"></span>
+                </div>
+                <button class="testimonial-btn next" onclick="nextTestimonial()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="animate-fade-in">Ready to Start Your Cosmetology Journey?</h2>
+            <p class="animate-slide-up">Join students who have taken confident steps toward successful beauty careers with our professional cosmetology training.</p>
+            <a href="../index.html#contact" class="btn btn-primary animate-bounce">Enquire Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Lakme Academy</h4>
+                    <p>Leading beauty academy offering professional courses in hairstyling, makeup, skincare, nail technology, and cosmetology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#courses">Courses</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 1st Floor, Amna Arcade, APJ Abdul Kalam Rd, Perunna, Changanassery, Kerala 686101</p>
+                    <p>📞 88911 30555</p>
+                    <p>✉️ nta.kottayam@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/naturals_academy_kottayam?igsh=MTk2bHV6dDZtdGIxdg==" target="_blank">Instagram</a></li>
+                        <li><a href="https://youtube.com/@naturalsacademykottayam?si=Oehz11vfqJS3rAkm" target="_blank">YouTube</a></li>
+                        <li><a href="https://share.google/pFwSYsd4B2NasZM3f" target="_blank">Google</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lakme Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    const slides = document.querySelectorAll(".course-slide");
+    const dots = document.querySelectorAll(".slider-controls .dot");
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("active"));
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+        currentSlide = index;
+    }
+
+    window.nextSlide = function() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+        showSlide(currentSlide);
+        resetSlideInterval();
+    }
+
+    window.prevSlide = function() {
+        currentSlide--;
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+        resetSlideInterval();
+    }
+
+    window.goToSlide = function(index) {
+        showSlide(index);
+        resetSlideInterval();
+    }
+
+    function startSlideInterval() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+    }
+
+    showSlide(0);
+    startSlideInterval();
+
+    let currentTestimonial = 0;
+    const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+    const testimonialDots = document.querySelectorAll(".testimonial-dots .dot");
+
+    function showTestimonial(index) {
+        testimonialSlides.forEach(s => s.classList.remove("active"));
+        testimonialDots.forEach(d => d.classList.remove("active"));
+        testimonialSlides[index].classList.add("active");
+        testimonialDots[index].classList.add("active");
+        currentTestimonial = index;
+    }
+
+    window.nextTestimonial = function() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+        showTestimonial(currentTestimonial);
+    }
+
+    window.prevTestimonial = function() {
+        currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+        showTestimonial(currentTestimonial);
+    }
+
+    window.goToTestimonial = function(index) {
+        showTestimonial(index);
+    }
+
+    showTestimonial(0);
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+});
+</script>
+</body>
+</html>

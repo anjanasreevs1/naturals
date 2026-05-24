@@ -1,0 +1,624 @@
+/* ===================================
+   Responsive Design - Mobile First
+   =================================== */
+
+/* ===================================
+   Tablets (768px and below)
+   =================================== */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+        gap: 0;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 1rem 0;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 4rem 1.5rem;
+        min-height: 350px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Courses Grid */
+    .courses-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        scroll-snap-type: x mandatory;
+    }
+
+    .course-card {
+        flex: 0 0 90%;
+        min-width: 90%;
+    }
+
+    .course-slider-btn {
+        display: none;
+    }
+
+    /* About Section */
+    .about {
+        padding: 2rem 1rem;
+    }
+
+    .vision-card {
+        padding: 1.5rem;
+    }
+
+    .vision-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .stat {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .metrics-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .metrics-list li {
+        font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    /* Sections */
+    .courses,
+    .about,
+    .contact {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ===================================
+   Small Tablets (600px and below)
+   =================================== */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 3rem 1rem;
+        min-height: 280px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Courses */
+    .courses {
+        padding: 2rem 1rem;
+    }
+
+    /* About */
+    .about {
+        padding: 2rem 1rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================
+   Mobile Phones (320px and up)
+   =================================== */
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo .tagline {
+        font-size: 0.7rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2rem 1rem;
+        min-height: 250px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Sections */
+    .courses,
+    .about,
+    .contact {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Course Card */
+    .course-image {
+        height: 150px;
+    }
+
+    .course-content {
+        padding: 1.5rem;
+    }
+
+    .course-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-content p {
+        font-size: 0.9rem;
+    }
+
+    /* About */
+    .about-content {
+        gap: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .features-list li {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    .stat {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Contact */
+    .contact-info h3,
+    .info-item strong {
+        font-size: 1.1rem;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    /* Button */
+    .btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+        letter-spacing: 0;
+    }
+
+    /* Footer */
+    .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.3rem;
+    }
+
+    .footer-section a {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===================================
+   Landscape Orientation
+   =================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 2rem;
+        min-height: 300px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ===================================
+   New Sections Responsive
+   =================================== */
+
+@media (max-width: 768px) {
+    .highlights-grid,
+    .impact-stats,
+    .approach-grid,
+    .career-grid,
+    .benefits-grid,
+    .employers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .highlight-item,
+    .impact-stat,
+    .approach-item,
+    .career-item,
+    .benefit-card,
+    .employer {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .course-details {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .highlights-grid,
+    .impact-stats,
+    .approach-grid,
+    .career-grid,
+    .benefits-grid,
+    .employers-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .impact-stat h3 {
+        font-size: 2rem;
+    }
+
+    .impact-stat p {
+        font-size: 0.9rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlights-grid,
+    .impact-stats,
+    .approach-grid,
+    .career-grid,
+    .benefits-grid,
+    .employers-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .highlight-item,
+    .impact-stat,
+    .approach-item,
+    .career-item,
+    .benefit-card,
+    .employer {
+        padding: 1rem;
+    }
+
+    .highlight-item h4,
+    .approach-item h4,
+    .career-item h3,
+    .benefit-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .highlight-item p,
+    .approach-item p,
+    .career-item p,
+    .benefit-card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .employer {
+        font-size: 0.9rem;
+    }
+
+    .placement-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .placement-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .cta-section p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+    .header,
+    .footer,
+    .contact-form {
+        display: none;
+    }
+
+    .courses,
+    .about {
+        page-break-inside: avoid;
+    }
+
+    .course-content {
+        page-break-inside: avoid;
+    }
+}
+
+/* ===================================
+   Course Pages - Responsive
+   =================================== */
+
+/* Course pages on tablets */
+@media (max-width: 768px) {
+    .course-header {
+        padding: 3rem 1.5rem;
+        min-height: 250px;
+    }
+
+    .course-header h1 {
+        font-size: 2rem;
+    }
+
+    .course-header p {
+        font-size: 1rem;
+    }
+
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enrollment-cta h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Course pages on small mobile */
+@media (max-width: 600px) {
+    .course-header {
+        padding: 2rem 1rem;
+        min-height: 200px;
+    }
+
+    .course-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .course-header p {
+        font-size: 0.9rem;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-item {
+        padding: 1.5rem;
+        border-left-width: 3px;
+    }
+
+    .course-content {
+        padding: 2rem 1rem;
+    }
+
+    .content-section {
+        padding: 1.2rem;
+    }
+
+    .enrollment-cta {
+        padding: 2rem 1rem;
+    }
+
+    .enrollment-cta h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .enrollment-cta p {
+        font-size: 0.95rem;
+    }
+}
