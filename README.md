@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lakme Academy Website
 
 A modern, responsive website for Lakme Academy - a professional beauty and cosmetology institute offering comprehensive training in hairstyling, cosmetology, makeup artistry, and skincare.
@@ -243,3 +244,6 @@ Update the following details in course pages:
 **Version**: 1.0.0
 
 For updates and improvements, please refer to the Git history or contact the development team.
+=======
+
+>>>>>>> 55ab059dc2eee538f54969ec5475c2a005538a5b
