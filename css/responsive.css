@@ -45,7 +45,7 @@
     /* Hero Section */
     .hero {
         padding: 4rem 1.5rem;
-        min-height: 350px;
+        min-height: 500px;
     }
 
     .hero-content h2 {
@@ -391,6 +391,108 @@
     .hero-content p {
         font-size: 0.9rem;
         margin-bottom: 1rem;
+    }
+}
+
+/* ===================================
+   Gallery Responsive
+   =================================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .gallery-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-row {
+        animation: scroll-left 40s linear infinite;
+    }
+
+    .gallery-row:nth-child(even) {
+        animation: scroll-left-reverse 40s linear infinite;
+    }
+}
+
+/* Small Tablets (600px and below) */
+@media (max-width: 600px) {
+    .gallery {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .gallery .section-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .gallery-item {
+        width: 120px;
+        height: 120px;
+    }
+
+    .gallery-overlay p {
+        font-size: 0.75rem;
+    }
+
+    .gallery-scroll-wrapper {
+        padding: 1rem 0;
+    }
+
+    .gallery-row {
+        gap: 0.8rem;
+        animation: scroll-left 35s linear infinite;
+    }
+
+    .gallery-row:nth-child(even) {
+        animation: scroll-left-reverse 35s linear infinite;
+    }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+    .gallery {
+        padding: 1.5rem 1rem;
+    }
+
+    .gallery .section-title {
+        font-size: 1.3rem;
+    }
+
+    .gallery .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .gallery-item {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+    }
+
+    .gallery-overlay p {
+        font-size: 0.65rem;
+        padding: 0.5rem;
+    }
+
+    .gallery-scroll-wrapper {
+        padding: 0.8rem 0;
+    }
+
+    .gallery-row {
+        gap: 0.6rem;
+        animation: scroll-left 30s linear infinite;
+    }
+
+    .gallery-row:nth-child(even) {
+        animation: scroll-left-reverse 30s linear infinite;
     }
 }
 
